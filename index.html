@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="root">
-        Teste: {{ somar(10, 20) }}
+        Teste: {{ somar() }}
     </div>
 
     <script>
@@ -17,11 +17,12 @@
         let options = {
             el: '#root', //# para selecionar por id e . para selecionar por class
             data: { // variáveis/atributos reativos
-               
+               n1: 10,
+               n2: 23
             },
             methods: {
-                somar: function somar(n1, n2){
-                    return n1 + n2
+                somar: function somar(){
+                    return this.n1 + this.n2
                 }
             }
         }
