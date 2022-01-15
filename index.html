@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="root">
-        Teste: {{ mensagem }}
+        Teste: {{ somar(10, 20) }}
     </div>
 
     <script>
@@ -17,7 +17,12 @@
         let options = {
             el: '#root', //# para selecionar por id e . para selecionar por class
             data: { // variáveis/atributos reativos
-                mensagem: 'Primeiro template controlado pelo Vue'
+               
+            },
+            methods: {
+                somar: function somar(n1, n2){
+                    return n1 + n2
+                }
             }
         }
 
