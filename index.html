@@ -7,20 +7,54 @@
     <title>Document</title>
     <script src="./vue.js"></script>
     <style>
+
+        .branco {
+            background-color: white;
+        }
+
         .verde {
-            color: green;
+            background-color: green;
         }
 
         .azul {
-            color: blue;
+            background-color: blue;
+        }
+
+        .vermelho {
+            background-color: red;
+        }
+
+        .bord { 
+            border: 1px solid black;
+        }
+
+        .main {
+            width: 200px;
+            height: 200px;
+        }
+
+        .common {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+
+        .common:hover {
+            width: 55px;
+            height: 55px;
+            box-shadow: 2px 2px 10px grey;
         }
     </style>
 </head>
 <body>
     
     <div id="app"> 
-        <input type="text" @keyup='imprimirTexto($event)'>
-        <button @click='mensagemAlerta($event)'>Botão</button>
+        <div  class="bord main" :class='color'>Cor: {{color}}</div>
+        <hr>
+        <div @click="changeColor('branco')" class="bord common branco"></div>
+        <div @click="changeColor('verde')" class="bord common verde"></div>
+        <div @click="changeColor('azul')" class="bord common azul"></div>
+        <div @click="changeColor('vermelho')" class="bord common vermelho"></div>
     </div>
 
     <script>
@@ -28,15 +62,11 @@
         const options = {
             el: '#app',
             data: {
-                xyz: true
+                color: 'branco',
             },
             methods: { 
-                imprimirTexto (event) {
-                    console.log(event.target.value);
-                },
-
-                mensagemAlerta(event){
-                    console.log(event)
+                changeColor(c) {
+                    this.color = c
                 }
             }
         }
