@@ -19,12 +19,8 @@
 <body>
     
     <div id="app"> 
-        {{ 2 + 2 }}
-        <input 
-            type="text" 
-            value="teste cor"
-            :class="1 == 1 ? estilo: 'verde'"
-        >
+        <input type="text" v-on:keyup='imprimirTexto'>
+        <button v-on:click='mensagemAlerta'>Botão</button>
     </div>
 
     <script>
@@ -32,10 +28,15 @@
         const options = {
             el: '#app',
             data: {
-                mensagem: "expressão",
-                estilo: "azul"
             },
             methods: { 
+                imprimirTexto () {
+                    console.log('teste')
+                },
+
+                mensagemAlerta(){
+                    alert('alerta!')
+                }
             }
         }
 
