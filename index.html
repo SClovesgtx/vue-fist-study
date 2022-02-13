@@ -8,56 +8,19 @@
     <script src="./vue.js"></script>
     <style>
 
-        .branco {
-            background-color: white;
-        }
-
-        .verde {
-            background-color: green;
-        }
-
-        .azul {
-            background-color: blue;
-        }
-
-        .vermelho {
-            background-color: red;
-        }
-
-        .bord { 
-            border: 1px solid black;
-        }
-
-        .main {
-            width: 200px;
-            height: 200px;
-        }
-
-        .common {
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-        }
-
-        .common:hover {
-            width: 55px;
-            height: 55px;
-            box-shadow: 2px 2px 10px grey;
-        }
     </style>
 </head>
 <body>
     
     <div id="app"> 
-        <a 
-            href="https://c-student-blog.vercel.app/"
-            target="_blank"
-            v-on:click.prevent
-        >
-        Meu site
-        </a>
-        <br>
-        {{msg}}
+        <input type="text" id="inputTexto">
+        <button @click="selecionarElFilho">Botão</button>
+        <hr>
+        <select name="opções" id="opcao">
+            <option value="A">Opção 1</option>
+            <option value="B">Opção 2</option>
+            <option value="C">Opção 3</option>
+        </select>
     </div>
 
     <script>
@@ -65,13 +28,12 @@
         const options = {
             el: '#app',
             data: {
-                msg: ''
+               
             },
             methods: { 
-                previnirComportamentoPadrao(){
-                    event.preventDefault()
-                    this.msg = "comportamento padrão ativado"
-                    
+                selecionarElFilho(){
+                    // console.log(inputTexto.value)
+                    console.log(opcao.value)
                 }
             }
         }
