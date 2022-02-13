@@ -49,7 +49,8 @@
 <body>
     
     <div id="app"> 
-        <div @mousemove="coordenadasMouse($event)"  class="bord main" :class='color'>Cor: {{color}}</div>
+        <div>Cor: {{color}}</div>
+        <div @mousemove="coordenadasMouse($event)"  class="bord main" :class='color'></div>
         <div>Posição X: {{xPosition}}</div>
         <div>Posição Y: {{yPosition}}</div>
         <hr>
