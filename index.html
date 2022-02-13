@@ -19,7 +19,7 @@
 <body>
     
     <div id="app"> 
-        <input type="text" @keyup='imprimirTexto'>
+        <input type="text" @keyup='imprimirTexto("enviando parâmetro", 2, xyz)'>
         <button @click='mensagemAlerta'>Botão</button>
     </div>
 
@@ -28,10 +28,13 @@
         const options = {
             el: '#app',
             data: {
+                xyz: true
             },
             methods: { 
-                imprimirTexto () {
-                    console.log('teste')
+                imprimirTexto (text, n, xyz) {
+                    console.log(text)
+                    console.log(n)
+                    console.log(xyz)
                 },
 
                 mensagemAlerta(){
