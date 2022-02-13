@@ -13,14 +13,9 @@
 <body>
     
     <div id="app"> 
-        <input type="text" id="inputTexto">
-        <button @click="selecionarElFilho">Botão</button>
-        <hr>
-        <select name="opções" id="opcao">
-            <option value="A">Opção 1</option>
-            <option value="B">Opção 2</option>
-            <option value="C">Opção 3</option>
-        </select>
+        <!-- v-if simples -->
+        <button @click="mostrarSaldo()">Exibir Saldo</button>
+        <p>Saldo: <span v-if='exibirSaldo'> R$ {{ saldo }} </span></p>
     </div>
 
     <script>
@@ -28,12 +23,12 @@
         const options = {
             el: '#app',
             data: {
-               
+               saldo: 15678.37,
+               exibirSaldo: false
             },
             methods: { 
-                selecionarElFilho(){
-                    // console.log(inputTexto.value)
-                    console.log(opcao.value)
+                mostrarSaldo(){
+                    this.exibirSaldo = true
                 }
             }
         }
