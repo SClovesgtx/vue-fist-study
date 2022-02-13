@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./vue.js"></script>
+    <style>
+        .verde {
+            color: green;
+        }
+    </style>
 </head>
 <body>
     
     <div id="app"> 
-        <b>Soma: </b>{{  somar(n1, n2) }} <br>
-        <b>Subtração: </b>{{  subtrair(n1, n2) }}
+        <a v-bind:href="site">Site C-Student</a>
+        <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
+        <input type="text" v-bind:placeholder="place">
+        <input type="checkbox" checked="checked">
     </div>
 
     <script>
@@ -19,12 +26,12 @@
         const options = {
             el: '#app',
             data: {
-                n1: 2,
-                n2: 3
+                site: "https://c-student-blog.vercel.app/",
+                cor:"verde",
+                place: "Digite algo aqui",
+                checked: true
             },
-            methods: {
-                somar: (n1, n2) => n1+n2,
-                subtrair: (n1, n2) => n1-n2  
+            methods: { 
             }
         }
 
