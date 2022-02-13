@@ -10,15 +10,21 @@
         .verde {
             color: green;
         }
+
+        .azul {
+            color: blue;
+        }
     </style>
 </head>
 <body>
     
     <div id="app"> 
-        <a :href="site">Site C-Student</a>
-        <p :class="cor">Entendendo a diretiva v-bind</p>
-        <input type="text" :placeholder="place">
-        <input type="checkbox" checked="checked">
+        {{ 2 + 2 }}
+        <input 
+            type="text" 
+            value="teste cor"
+            :class="1 == 1 ? estilo: 'verde'"
+        >
     </div>
 
     <script>
@@ -26,10 +32,8 @@
         const options = {
             el: '#app',
             data: {
-                site: "https://c-student-blog.vercel.app/",
-                cor:"verde",
-                place: "Digite algo aqui",
-                checked: true
+                mensagem: "expressão",
+                estilo: "azul"
             },
             methods: { 
             }
