@@ -14,7 +14,7 @@
     
     <div id="app"> 
         <!-- v-if simples -->
-        <button @click="mostrarSaldo()">Exibir Saldo</button>
+        <button @click="mostrarSaldo()">{{mensagemButao}}</button>
         <p>Saldo: <span v-if='exibirSaldo'> R$ {{ saldo }} </span></p>
     </div>
 
@@ -24,11 +24,18 @@
             el: '#app',
             data: {
                saldo: 15678.37,
+               mensagemButao: 'Exibir Saldo',
                exibirSaldo: false
             },
             methods: { 
                 mostrarSaldo(){
-                    this.exibirSaldo = true
+                    if(this.exibirSaldo === true){
+                        this.exibirSaldo = false;
+                        this.mensagemButao = "Mostrar Saldo"
+                    } else {
+                        this.exibirSaldo = true;
+                        this.mensagemButao = "Ocultar Saldo"
+                    }
                 }
             }
         }
