@@ -4,40 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./vue.js"></script>
     <title>Document</title>
-    <style>
-        .vermelho{
-            color: red;
-        }
-    </style>
+    <script src="./vue.js"></script>
 </head>
 <body>
-    <div id="root">
-        <h1 v-bind:class="cor">Entendendo a derivativa v-bind</h1>
-        <a target="_blank" v-bind:href="site">Site</a>
-        <input type="text" v-bind:placeholder="placeholderText">
-        <input type="checkbox" v-bind:checked="check">
+    
+    <div id="app"> 
+        <b>Soma: </b>{{  somar(n1, n2) }} <br>
+        <b>Subtração: </b>{{  subtrair(n1, n2) }}
     </div>
 
     <script>
 
-        let options = {
-            el: '#root', //# para selecionar por id e . para selecionar por class
-            data: { 
-                site: "https://c-student-blog.vercel.app/",
-                cor: "vermelho",
-                check: true,
-                placeholderText: "digite aqui alguma coisa"
+        const options = {
+            el: '#app',
+            data: {
+                n1: 2,
+                n2: 3
             },
             methods: {
-               
+                somar: (n1, n2) => n1+n2,
+                subtrair: (n1, n2) => n1-n2  
             }
         }
 
-        const vm = new Vue(options) // vm = ViewModel
+        const vm = new Vue(options)
 
         console.log(vm)
+
     </script>
 </body>
 </html>
